@@ -57,11 +57,13 @@ onClick={()=>setOpen(true)}
 
 <img
 src="https://akkistudios.com/wp-content/uploads/2024/03/akki-studios-logo-white.png"
+alt="Company Logo"
 style={styles.topLogo}
 />
 
 <img
 src={user?.photo || "https://i.pravatar.cc/150"}
+alt="User Profile"
 style={styles.profile}
 onClick={()=>navigate("/profile")}
 />
@@ -84,6 +86,7 @@ left: mobile ? (open ? 0 : -260) : 0
 
 <img
 src="https://akkistudios.com/wp-content/uploads/2024/03/akki-studios-logo-white.png"
+alt="Sidebar Logo"
 style={styles.logo}
 />
 
