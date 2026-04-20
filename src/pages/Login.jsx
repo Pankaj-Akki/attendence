@@ -44,6 +44,7 @@ export default function Login() {
 
         <img
           src="https://akkistudios.com/wp-content/uploads/2024/03/akki-studios-logo-white.png"
+          alt="Company Logo"
           style={styles.logo}
         />
 
@@ -71,18 +72,39 @@ export default function Login() {
       <div style={styles.footer}>
 
         <div style={styles.left}>
-          <a style={styles.link} href="https://www.linkedin.com/company/6990098" target="_blank">LinkedIn</a>
-          <a style={styles.link} href="https://www.facebook.com/akkistudios" target="_blank">Facebook</a>
-          <a style={styles.link} href="https://www.instagram.com/akkistudiosindia/" target="_blank">Instagram</a>
+          <a 
+            style={styles.link} 
+            href="https://www.linkedin.com/company/6990098" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a 
+            style={styles.link} 
+            href="https://www.facebook.com/akkistudios" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            Facebook
+          </a>
+
+          <a 
+            style={styles.link} 
+            href="https://www.instagram.com/akkistudiosindia/" 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            Instagram
+          </a>
           
         </div>
 
-        <div style={styles.center}>
-         
-        </div>
+        <div style={styles.center}></div>
 
         <div style={styles.right}>
-        © All rights reserved Akki Studios
+          © All rights reserved Akki Studios
         </div>
 
       </div>
@@ -169,8 +191,6 @@ const styles = {
     zIndex:2,
     flexWrap:"wrap",
     gap:10,
-
-    
   },
 
   left:{
