@@ -49,6 +49,7 @@ reader.readAsDataURL(e.target.files[0]);
 
 <img
 src={user.photo || "https://i.pravatar.cc/150"}
+alt="Profile"
 style={styles.avatar}
 />
 
