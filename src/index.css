@@ -1,13 +1,355 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+/* ========================
+   FONT + RESET
+======================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  }
+  
+  body{
+  font-family:'DM Sans', sans-serif;
+  background:#020617;
+  color:white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  }
+  
+  
+  /* ========================
+     LOGIN PAGE
+  ======================== */
+  
+  .login-box{
+  background:url("https://akkistudios.com/wp-content/uploads/2026/04/19873.webp");
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  }
+  
+  .login-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+  135deg,
+  rgba(2,6,23,.92),
+  rgba(2,6,23,.75)
+  );
+  }
+  
+  .login-card{
+  backdrop-filter:blur(20px);
+  background:rgba(17,24,39,.55);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  animation:fadeUp .6s ease;
+  }
+  
+  
+  /* ========================
+     PAGE LAYOUT
+  ======================== */
+  
+  .page{
+  padding:20px;
+  animation:fadeUp .4s ease;
+  }
+  
+  .card{
+  background:#111827;
+  padding:20px;
+  border-radius:12px;
+  margin-top:15px;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+  border:1px solid #1f2937;
+  }
+  
+  
+  /* ========================
+     INPUTS
+  ======================== */
+  
+  input,textarea,select{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  margin-bottom:12px;
+  background:#020617;
+  border:1px solid #1f2937;
+  color:white;
+  border-radius:8px;
+  outline:none;
+  transition:.2s;
+  }
+  
+  input:focus,
+  textarea:focus{
+  border:1px solid #ec1d25 !important;
+  box-shadow:0 0 0 1px #ec1d25;
+  transform:translateY(-1px);
+  }
+  
+  
+  /* ========================
+     BUTTONS
+  ======================== */
+  
+  button{
+  background:#ec1d25;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  color:white;
+  cursor:pointer;
+  margin-right:10px;
+  font-weight:500;
+  transition:.2s;
+  }
+  
+  button:hover{
+  background:#d01920;
+  transform:translateY(-1px);
+  box-shadow:0 10px 20px rgba(236,29,37,.25);
+  }
+  
+  .danger{
+  background:#ef4444;
+  }
+  
+  .danger:hover{
+  background:#dc2626;
+  }
+  
+  
+  /* ========================
+     STATUS BADGES
+  ======================== */
+  
+  .status{
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  text-transform:capitalize;
+  }
+  
+  .status.pending{
+  background:#f59e0b;
+  }
+  
+  .status.approved{
+  background:#22c55e;
+  }
+  
+  .status.rejected{
+  background:#ef4444;
+  }
+  
+  .present{
+  background:#22c55e;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:12px;
+  }
+  
+  
+  /* ========================
+     TABLE
+  ======================== */
+  
+  .table{
+  width:100%;
+  margin-top:20px;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:10px;
+  }
+  
+  .table th{
+  text-align:left;
+  padding:12px;
+  background:#111827;
+  border-bottom:1px solid #1f2937;
+  font-weight:500;
+  }
+  
+  .table td{
+  padding:12px;
+  border-bottom:1px solid #1f2937;
+  }
+  
+  .table tr:hover{
+  background:#0f172a;
+  }
+  
+  
+  /* ========================
+     SIDEBAR
+  ======================== */
+  
+  .sidebar{
+  width:220px;
+  background:#020617;
+  border-right:1px solid #1f2937;
+  min-height:100vh;
+  padding:20px;
+  }
+  
+  .sidebar a{
+  display:block;
+  color:#cbd5e1;
+  padding:10px;
+  border-radius:8px;
+  text-decoration:none;
+  margin-bottom:5px;
+  transition:.2s;
+  }
+  
+  .sidebar a:hover{
+  background:#111827;
+  color:white;
+  }
+  
+  .sidebar a.active{
+  background:#ec1d25;
+  color:white;
+  }
+  
+  
+  /* ========================
+     HR TABS
+  ======================== */
+  
+  .activeTab{
+  background:#ec1d25 !important;
+  }
+  
+  .tabs{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+  }
+  
+  
+  /* ========================
+     PROFILE IMAGE
+  ======================== */
+  
+  .avatar{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid #ec1d25;
+  margin-top:10px;
+  }
+  
+  
+  /* ========================
+     ANIMATIONS
+  ======================== */
+  
+  @keyframes fadeUp{
+  from{
+  opacity:0;
+  transform:translateY(20px);
+  }
+  to{
+  opacity:1;
+  transform:translateY(0);
+  }
+  }
+  
+  @keyframes float{
+  0%{ transform:translateY(0px)}
+  50%{ transform:translateY(-30px)}
+  100%{ transform:translateY(0px)}
+  }
+  
+  
+  /* ========================
+     SCROLLBAR
+  ======================== */
+  
+  ::-webkit-scrollbar{
+  width:6px;
+  }
+  
+  ::-webkit-scrollbar-track{
+  background:#020617;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+  background:#ec1d25;
+  border-radius:10px;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+   a:hover{
+      transform:translateX(4px);
+      background:rgba(236,29,37,.1);
+      }
+   .react-calendar{
+      background:transparent !important;
+      border:none !important;
+      color:white;
+      width:100%;
+      }
+      
+      .react-calendar__tile{
+      padding:12px 6px !important;
+      border-radius:8px;
+      transition:.2s;
+      }
+      
+      .react-calendar__tile:hover{
+      background:rgba(236,29,37,.1);
+      }
+      
+      .react-calendar__tile--active{
+      background:#ec1d25 !important;
+      }
+      
+      .react-calendar__month-view__weekdays{
+      color:#94a3b8;
+      }
+
+      @media(max-width:900px){
+
+         .sidebar{
+         left:-260px !important;
+         }
+         
+         }
+         
+         @media(max-width:900px){
+         
+         body{
+         padding-top:60px;
+         }
+         
+         }
+         @media(max-width:900px){
+
+            .sidebar{
+            left:-260px;
+            }
+            
+            }
+            @media(max-width:900px){
+
+               .mobileHeader{
+               display:flex !important;
+               }
+               
+               .content{
+               margin-left:0 !important;
+               padding-top:80px !important;
+               }
+               
+               }
+
+               .react-calendar__tile--now {
+                  background: #ffff76;
+                  color: rgb(0, 0, 0)!important;
+              }
