@@ -19,6 +19,7 @@ const today = new Date().toISOString().split("T")[0];
 
 useEffect(()=>{
 loadUser();
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[]);
 
 const loadUser = async()=>{
@@ -96,8 +97,6 @@ Welcome back, {user.firstName}
 Mark your attendance for today
 </div>
 </div>
-
-
 
 </div>
 
